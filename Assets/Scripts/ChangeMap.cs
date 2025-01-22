@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 public class ChangeMap : MonoBehaviour
 {
     private bool Overworld = true;
+    public GameObject player;
+
+
     private void Start()
     {
        
@@ -14,15 +17,19 @@ public class ChangeMap : MonoBehaviour
     public void change()
 
     {
-     if (Overworld == true)
+
+        if ((player.transform.position - transform.position).magnitude < 3.5)
         {
-            SceneManager.LoadScene("Underworld");
+            if (Overworld == true)
+            {
+                SceneManager.LoadScene("Underworld");
                 Overworld = false;
-        }
-     else
-        {
-            SceneManager.LoadScene("Above Ground");
+            }
+            else
+            {
+                SceneManager.LoadScene("Above Ground");
                 Overworld = true;
+            }
         }
     }
 

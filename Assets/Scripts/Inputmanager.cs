@@ -10,7 +10,7 @@ public class Inputmanager : MonoBehaviour, Gameplay.IPlayerMovementActions
 
     public void OnInteract(InputAction.CallbackContext context)
     {
-        if(context.performed)
+        if(context.started)
         {
             Actions.interact?.Invoke();
         }
