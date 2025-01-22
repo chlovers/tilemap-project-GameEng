@@ -5,16 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class ChangeMap : MonoBehaviour
 {
-    private bool Overworld;
+    private bool Overworld = true;
     private void Start()
     {
-        Overworld = true;
+       
     }
 
     public void change()
 
     {
-     if (Overworld = true)
+     if (Overworld == true)
         {
             SceneManager.LoadScene("Underworld");
                 Overworld = false;
@@ -25,4 +25,15 @@ public class ChangeMap : MonoBehaviour
                 Overworld = true;
         }
     }
+
+
+    private void OnEnable()
+    {
+        Actions.interact += change;
+    }
+    private void OnDisable()
+    {
+        Actions.interact -= change;
+    }
+
 }
