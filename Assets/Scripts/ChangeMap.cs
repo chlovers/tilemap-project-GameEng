@@ -18,7 +18,7 @@ public class ChangeMap : MonoBehaviour
 
     {
 
-        if ((player.transform.position - transform.position).magnitude < 3.5)
+        if ((player.transform.position - transform.position).magnitude < 2)
         {
             if (Overworld == true)
             {
